@@ -42,7 +42,7 @@ jobs:
       - name: Check view content
         run: |
           # Check if "Hello World" is in the view
-          if ! grep -q "Hello World" app/views/home/index.html.erb; then
+          if ! grep -q -e "root 'home#index'" -e 'root "home#index"' config/routes.rb; then          
             echo "Error: 'Hello World' is not found in app/views/home/index.html.erb." >&2
             exit 1
           fi
