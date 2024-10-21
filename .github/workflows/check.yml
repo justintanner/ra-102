@@ -64,7 +64,7 @@ jobs:
             https://rails.academy/commands/finish_lesson)
 
           if [ "$RESPONSE" -ne 200 ]; then
-            echo "Error: Failed to register Lesson 102. HTTP Status: $RESPONSE TOKEN: ${{ secrets.RA_API_TOKEN }}" >&2
+            echo "Error: Failed to register Lesson 102. HTTP Status: $RESPONSE" >&2
             echo "Response Body: $(cat /tmp/lesson_response_body.txt)" >&2
             exit 1
           fi
