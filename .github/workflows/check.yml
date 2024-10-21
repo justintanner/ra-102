@@ -34,7 +34,7 @@ jobs:
       - name: Check routes configuration
         run: |
           # Verify the root route is set to home#index
-          if ! grep -q "root 'home#index'" config/routes.rb; then
+          if ! grep -E "root ['\"]home#index['\"]" config/routes.rb; then
             echo "Error: Root route is not set to home#index." >&2
             exit 1
           fi
